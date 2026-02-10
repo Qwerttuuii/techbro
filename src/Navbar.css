@@ -1,0 +1,74 @@
+/* Navbar container */
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Law firm name */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* NavLink default */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Active link highlight */
+.nav-links a.active {
+  color: #8b0000; /* dark red (law firm style) */
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 4px;
+}
+
