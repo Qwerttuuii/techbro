@@ -1,4 +1,15 @@
+import Hero from "./Hero";
+import PracticeSection from "./PracticeSection";
+import WhoWeAre from "./WhoWeAre";
+
 function Home() {
-  return <h2>Welcome to Our Law Firm</h2>;
+  return (
+    <>
+      <Hero />
+      <PracticeSection />
+      <WhoWeAre />
+    </>
+  );
 }
+
 export default Home;

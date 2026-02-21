@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">Asika & Associates</div>
+      <div className="logo">FID ASIKA & CO</div>
 
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
@@ -21,13 +21,13 @@ function Navbar() {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/practice-areas">Practice Areas</NavLink>
+          <NavLink to="/News">News</NavLink>
         </li>
         <li>
           <NavLink to="/attorneys">Attorneys</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/contact">Contact us</NavLink>
         </li>
       </ul>
     </nav>

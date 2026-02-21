@@ -1,11 +1,17 @@
 import Navbar from "./Navbar";
 import { Routes, Route } from "react-router-dom";
+import Footer from "./Footer";
+
+
+
+
 
 import Home from "./Home";
 import About from "./About";
-import PracticeAreas from "./PracticeAreas";
+import News from "./News";
 import Attorneys from "./Attorneys";
 import Contact from "./Contact";
+
 
 function App() {
   return (
@@ -14,10 +20,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/PracticeAreas" element={<PracticeAreas />} />
+        <Route path="/News" element={<News />} />
         <Route path="/Attorneys" element={<Attorneys />} />
         <Route path="/Contact" element={<Contact />} />
+     
+
       </Routes>
+      <Footer/>
     </>
   );
 }

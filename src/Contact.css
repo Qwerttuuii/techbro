@@ -1,0 +1,84 @@
+.contact-page {
+  padding: 120px 6%;
+  background: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.contact-hero h1 {
+  font-size: 60px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.location-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+.location-card img {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+.contact-info {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.socials {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.socials i {
+  margin-right: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.socials i:hover {
+  transform: scale(1.2);
+}
+
+/* Scroll Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 1s ease forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .locations {
+    grid-template-columns: 1fr;
+  }
+}
