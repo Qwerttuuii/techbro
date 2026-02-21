@@ -20,7 +20,7 @@ function Footer() {
 
         <div className="footer-column">
           <h3>Services</h3>
-          <Link to="/PracticeAreas">Practice Areas</Link>
+          <Link to="/OurTeam">OurTeam</Link>
           <Link to="/Contact">Contact Us</Link>
         </div>
 
