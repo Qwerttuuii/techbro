@@ -8,8 +8,7 @@ import Footer from "./Footer";
 
 import Home from "./Home";
 import About from "./About";
-import News from "./News";
-import Attorneys from "./Attorneys";
+import OurTeam from "./OurTeam";
 import Contact from "./Contact";
 
 
@@ -20,8 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/News" element={<News />} />
-        <Route path="/Attorneys" element={<Attorneys />} />
+        <Route path="/OurTeam" element={<OurTeam />} />
         <Route path="/Contact" element={<Contact />} />
      
 

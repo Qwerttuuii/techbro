@@ -1,84 +1,186 @@
-.contact-page {
-  padding: 120px 6%;
-  background: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
-}
-
-.contact-hero {
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.contact-hero h1 {
-  font-size: 60px;
+.contact-section {
+  width: 100%;
+  background: #0d0d0d;
+  color: white;
+  padding: 80px 50px;
+  font-family: 'Inter', sans-serif;
 }
 
 .contact-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.contact-header {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.gold-line {
+  width: 55px;
+  height: 3px;
+  background: #c6a45c;
+  margin-bottom: 20px;
+}
+
+.contact-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  color: #bdbdbd;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* MAIN */
+.contact-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 70px;
+}
+
+/* INFO */
+.contact-info {
+  display: flex;
+  align-items: center;
   gap: 40px;
 }
 
-.locations {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+.info-item {
+  display: flex;
+  align-items: flex-start;  /* ICON PERFECT ALIGN */
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.location-card {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
+.info-item:hover {
+  transform: translateY(-4px);
+}
+
+.info-icon {
+  color: #c6a45c;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+.info-text h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #c6a45c;
+  margin-bottom: 5px;
+}
+
+.info-text p {
+  font-size: 15px;
+  color: #e0e0e0;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 50px;
+  background: #2b2b2b;
+}
+
+/* OFFICE SECTION */
+.office-wrapper {
+  max-width: 600px;
+}
+
+.office-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.office-card {
+  display: flex;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px;
   transition: 0.4s ease;
 }
 
-.location-card img {
-  width: 100%;
-  margin-top: 15px;
-  border-radius: 6px;
+.office-card:hover {
+  border-color: #c6a45c;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-.contact-info {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
+.office-block {
+  display: flex;
+  gap: 15px;
+  flex: 1;
 }
 
-.socials {
-  margin-top: 20px;
-  font-size: 20px;
+.location-icon {
+  color: #c6a45c;
+  margin-top: 3px;
 }
 
-.socials i {
-  margin-right: 15px;
-  cursor: pointer;
-  transition: 0.3s;
+.office-block h4 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
-.socials i:hover {
-  transform: scale(1.2);
+.office-block p {
+  font-size: 14px;
+  color: #cfcfcf;
+  margin: 3px 0;
 }
 
-/* Scroll Animation */
+.office-divider {
+  width: 1px;
+  background: #2b2b2b;
+  margin: 0 25px;
+}
+
+/* SCROLL REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  animation: reveal 1s ease forwards;
+  transition: all 1s ease;
 }
 
-@keyframes reveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
+/* RESPONSIVE */
+@media (max-width: 992px) {
+
+  .contact-main {
+    flex-direction: column;
+    gap: 50px;
   }
 
-  .locations {
-    grid-template-columns: 1fr;
+  .office-card {
+    flex-direction: column;
+  }
+
+  .office-divider {
+    width: 100%;
+    height: 1px;
+    margin: 25px 0;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .contact-header h1 {
+    font-size: 40px;
   }
 }

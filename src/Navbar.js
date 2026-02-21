@@ -20,11 +20,9 @@ function Navbar() {
         <li>
           <NavLink to="/about">About</NavLink>
         </li>
+       
         <li>
-          <NavLink to="/News">News</NavLink>
-        </li>
-        <li>
-          <NavLink to="/attorneys">Attorneys</NavLink>
+          <NavLink to="/OurTeam">OurTeam</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Contact us</NavLink>

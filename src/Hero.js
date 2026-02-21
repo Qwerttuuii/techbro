@@ -1,19 +1,15 @@
 import "./Hero.css";
 import heroBg from "./assets/hero-bg.png";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
 
   return (
     <section
       className="hero"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-     
-
       <div className="hero-content">
         <h1>
           Your Trusted Legal <br /> Partner
@@ -28,14 +24,14 @@ function Hero() {
         <div className="hero-buttons">
           <button
             className="primary-btn"
-            onClick={() => scrollToSection("contact")}
+            onClick={() => navigate("/Contact")}
           >
             Schedule Consultation →
           </button>
 
           <button
             className="secondary-btn"
-            onClick={() => scrollToSection("about")}
+            onClick={() => navigate("/About")}
           >
             Learn About Us
           </button>

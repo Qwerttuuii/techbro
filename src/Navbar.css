@@ -6,7 +6,13 @@
   align-items: center;
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
+  position: stickyn;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  
 }
+
 
 /* Law firm name */
 .logo {
@@ -39,7 +45,9 @@
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
+    
   }
+
 
   .nav-links {
     position: absolute;
@@ -67,8 +75,8 @@
 
 /* Active link highlight */
 .nav-links a.active {
-  color: #8b0000; /* dark red (law firm style) */
-  border-bottom: 2px solid #8b0000;
+  color: 2px solid #c6a75e; /* dark red (law firm style) */
+  border-bottom: 2px solid #c6a75e;
   padding-bottom: 4px;
 }
 

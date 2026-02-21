@@ -10,6 +10,8 @@
   width: 89.5%;
   padding: 30px 80px 30px;
   border-top: 4px solid #111;
+  display: grid;
+  gap: 30px;
 
 }
 
@@ -60,4 +62,16 @@
   text-align: center;
   color: #aaa;
   font-size: 14px;
+}
+@media (max-width: 768px) {  
+  .footer-container{
+  flex-direction: column;
+  padding: 60px;
+  text-align: center;
+  margin-right: 100px;
+  }
+  .footer-bottom{
+    text-align: center;
+    flex-direction: column;
+  }
 }
