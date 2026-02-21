@@ -9,9 +9,9 @@ function Navbar() {
     <nav className="navbar">
       <div className="logo">FID ASIKA & CO</div>
 
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
+  <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+  {menuOpen ? "✖" : "☰"}
+</div>
 
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
         <li>

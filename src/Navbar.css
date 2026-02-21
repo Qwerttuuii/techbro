@@ -26,6 +26,8 @@
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -49,10 +51,12 @@
   }
 
 
+@media (max-width: 768px) {
+
   .nav-links {
     position: absolute;
-    top: 65px;
-    right: 0;
+    top: 100%;        /* Attach directly below navbar */
+    left: 0;
     background-color: white;
     flex-direction: column;
     width: 100%;
@@ -63,6 +67,7 @@
     z-index: 3000;
   }
 
+}
   .nav-links.active {
     display: flex;
   }
