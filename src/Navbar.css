@@ -6,10 +6,10 @@
   align-items: center;
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
-  position: stickyn;
+  position: sticky;
   top: 0;
   background: white;
-  z-index: 1000;
+  z-index: 2000;
   
 }
 
@@ -60,6 +60,7 @@
     display: none;
     padding: 20px 0;
     border-top: 1px solid #ddd;
+    z-index: 3000;
   }
 
   .nav-links.active {

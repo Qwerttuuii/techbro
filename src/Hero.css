@@ -6,25 +6,23 @@
   color: white;
   background-size: cover;
   background-position: center;
+  z-index: 0; /* create base stacking level */
 }
-
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75); /* dark overlay */
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0; /* keep overlay behind content */
 }
-
-
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* above overlay */
   max-width: 700px;
-  padding: 0 60px;   /* move padding here */
+  padding: 0 60px;
 }
-
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
