@@ -1,4 +1,4 @@
-import ceoImage from "./assets/ceo.png";
+import ceoImage from "./assets/FIDASIKA.jpeg";
 import "./WhoWeAre.css";
 import { Link } from "react-router-dom";
 

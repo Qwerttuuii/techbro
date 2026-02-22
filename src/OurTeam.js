@@ -45,7 +45,7 @@ function OurTeam() {
   {/* Senior Partner */}
   <div className="senior-wrapper">
     <div className="team-card senior fade-in">
-      <img src="/images/senior.png" alt="Senior Partner" className="team-img" />
+      <img src="/images/senior.jpeg" alt="Senior Partner" className="team-img" />
         <div className="team-info">
       <h3>Chief FID Asika</h3>
       <span>Senior Partner</span>
@@ -54,7 +54,7 @@ function OurTeam() {
   </div>
 
   {/* Other Team Members */}
-  <div className="team-container">
+  <div className="team-container">   
 
     <div className="team-card fade-in">
       <img src="/images/partner1.png" alt="Partner" className="team-img" />
