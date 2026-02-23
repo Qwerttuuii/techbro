@@ -23,6 +23,16 @@ section {
   font-family: 'Playfair Display', serif;
   font-size: 52px;
   margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+.who-text h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #c6a75e;
+  display: block;
+  margin-top: 15px;
 }
 
 .who-text p {
@@ -110,5 +120,9 @@ section {
   .stats-container {
     flex-direction: column;
     gap: 50px;
+  }
+   .who-text h2::after {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

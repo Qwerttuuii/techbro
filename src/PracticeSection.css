@@ -13,7 +13,18 @@
 .practice h2 {
   font-family: 'Playfair Display', serif;
   font-size: 52px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.practice h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #c6a75e;
+  display: block;
+  margin: 15px auto 0 auto;
 }
 
 .practice-subtext {
