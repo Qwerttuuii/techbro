@@ -40,7 +40,7 @@ const Contact = () => {
               <FaPhoneAlt className="info-icon" />
               <div className="info-text">
                 <h4>Phone</h4>
-                <p>+234 800 000 0000</p>
+                <p>+234 8032707050</p>
               </div>
             </div>
 
@@ -50,7 +50,7 @@ const Contact = () => {
               <FaEnvelope className="info-icon" />
               <div className="info-text">
                 <h4>Email</h4>
-                <p>contact@yourlawfirm.com</p>
+                <p>fidasikailobilawfirm@gmail.com</p>
               </div>
             </div>
 

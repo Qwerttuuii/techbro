@@ -47,7 +47,7 @@ function OurTeam() {
     <div className="team-card senior fade-in">
       <img src="/images/senior.jpeg" alt="Senior Partner" className="team-img" />
         <div className="team-info">
-      <h3>Chief FID Asika</h3>
+      <h3>Mbuba Ilobi Asika</h3>
       <span>Senior Partner</span>
     </div>
     </div>
