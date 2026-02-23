@@ -193,11 +193,11 @@
   position: relative;
 }
 .why-firm-section p {
-  color: #bbb;
+  color: white;
 }
 
 .why-column li {
-  color: #ddd;
+  color: white;
 }
 
 .why-firm-header {
@@ -257,7 +257,7 @@
 }
 
 .why-column p {
-  color: #555;
+  color: white;   
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -271,7 +271,7 @@
   margin-bottom: 15px;
   padding-left: 20px;
   position: relative;
-  color: #444;
+  color: white;
 }
 
 /* Elegant vertical gold bullet */
