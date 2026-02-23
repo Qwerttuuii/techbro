@@ -1,0 +1,135 @@
+.testimonials {
+  padding: 120px 0;
+  background: #f7f7f7;
+}
+
+.testimonial-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonial-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  
+}
+.testimonial-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.testimonial-header h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #c6a75e;
+  display: block;
+  margin: 18px auto 0;
+}
+.testimonial-header p {
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto;   /* centers paragraph block */
+  line-height: 1.7;
+}
+
+.testimonial-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+ 
+}
+
+
+.testimonial-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.stars {
+  color: #c6a75e;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.testimonial-card p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.testimonial-card span {
+  color: #777;
+  font-size: 14px;
+}
+
+/* CTA */
+.testimonial-cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.testimonial-cta p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.team-btn {
+  background: #000;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.team-btn:hover {
+  background: #222;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .testimonial-header {
+    text-align: center;
+  }
+
+  .testimonial-grid {
+    flex-direction: column;
+  }
+
+  .testimonial-card {
+    padding: 30px;
+  }
+}

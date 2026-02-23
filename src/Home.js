@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import PracticeSection from "./PracticeSection";
 import WhoWeAre from "./WhoWeAre";
+import Testimonials from "./Testimonials";
 
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
       <Hero />
       <PracticeSection />
       <WhoWeAre />
+      <Testimonials/>
     </>
   );
 }
