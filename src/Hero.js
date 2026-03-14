@@ -11,8 +11,10 @@ function Hero() {
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       <div className="hero-content">
-        <h1>
-          Your Trusted Legal <br /> Partner
+
+        <h1 className="typing">
+          <span>Your Trusted Legal</span>
+          <span>Partner</span>
         </h1>
 
         <p>
@@ -36,6 +38,7 @@ function Hero() {
             Learn About Us
           </button>
         </div>
+
       </div>
     </section>
   );
