@@ -33,6 +33,22 @@ function WhoWeAre() {
     };
 
     updateCount();
+    const elements = document.querySelectorAll(
+  ".who-text, .who-image, .stat-box"
+);
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+elements.forEach((el) => sectionObserver.observe(el));
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -53,14 +69,14 @@ function WhoWeAre() {
     <section className="who">
       <div className="who-container">
         {/* LEFT TEXT */}
-        <div className="who-text">
+        <div className="who-text hidden">
           <h2>Who We Are</h2>
 
           <p>
-            FID ASIKA & CO. was founded on the principle that exceptional legal
-            counsel should be accessible to those who need it most. Our team of
-            experienced attorneys is dedicated to providing strategic,
-            results-driven representation.
+            Fidelis Asika Ilobi & Company ("The Firm"). is one of Nigeria's leading law firm with a rich heritage
+            and culture of excellence. The law firm was established in the year 1964, by Chief Fidelis Asika Ilobi of the blessed memory.
+            We not only have the confidence to challenge existing thinking but also the willingness to push boundaries within the framework of the law
+            The firm provides specialized high quality legal services.
           </p>
 
           <p>
@@ -76,8 +92,8 @@ function WhoWeAre() {
 
         
         
-          {/* You will place CEO image here later */}
-          <div className="who-image">
+          {/* CEO image here  */}
+          <div className="who-image hidden">
   <img src={ceoImage} alt="CEO" />
         
 
@@ -87,7 +103,7 @@ function WhoWeAre() {
 <section className="who-stats">
   <div className="stats-container">
 
-    <div className="stat-box">
+    <div className="stat-box hidden">
       <h2 className="stat-number" data-target="500">0</h2>
       <p>Cases Successfully Handled</p>
     </div>

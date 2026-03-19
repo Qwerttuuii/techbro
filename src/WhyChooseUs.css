@@ -1,0 +1,154 @@
+/* SECTION */
+.why {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+}
+
+.why-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.why-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.why-subtitle {
+  color: #c6a75e;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.why-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.why-header .line {
+  width: 60px;
+  height: 2px;
+  background: #c6a75e;
+  margin: 18px auto 0;
+}
+
+/* GRID */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.why-card {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* FEATURED */
+.why-card.featured {
+  border-color: #c6a75e;
+}
+
+/* GOLD ACCENT */
+.why-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 3px;
+  height: 0%;
+  background: #c6a75e;
+  transition: height 0.4s ease;
+}
+
+.why-card:hover::before {
+  height: 70%;
+}
+
+/* HOVER */
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: #c6a75e;
+}
+
+/* ICON */
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c6a75e;
+  font-size: 20px;
+}
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* TEXT */
+.why-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+.why-title {
+  font-family: "Playfair Display", serif;
+  font-size: 4px;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+/* ANIMATION */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* STAGGER */
+.why-card:nth-child(1).show { transition-delay: 0.1s; }
+.why-card:nth-child(2).show { transition-delay: 0.15s; }
+.why-card:nth-child(3).show { transition-delay: 0.2s; }
+.why-card:nth-child(4).show { transition-delay: 0.25s; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

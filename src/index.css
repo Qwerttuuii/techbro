@@ -29,3 +29,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --primary: #000;
+  --accent: #c6a75e;
+  --text: #222;
+  --subtext: #666;
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+
+  --transition: all 0.4s ease;
+}

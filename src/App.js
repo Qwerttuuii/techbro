@@ -6,7 +6,7 @@ import ScrollToTop from "./ScrollToTop";
 import Home from "./Home";
 import About from "./About";
 import OurTeam from "./OurTeam";
- import Contact from "./Contact";
+import Contact from "./Contact";
 
  function App() {
   return (

@@ -1,91 +1,190 @@
 .practice {
-  background: #f5f5f5;
+  background: #0a0a0a;
   padding: 120px 0;
-  text-align: center;   /* center everything */
+  text-align: center;
+  color: white;
 }
 
 .practice-container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
 }
 
+/* SECTION TITLE */
 .practice h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  margin-bottom: 25px;
+  font-size: 48px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   position: relative;
-  display: inline-block;
 }
 
 .practice h2::after {
   content: "";
-  width: 70px;
-  height: 3px;
-  background: #c6a75e;
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
   display: block;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 0;
 }
 
+/* SUBTEXT */
 .practice-subtext {
-  font-size: 19px;
-  color: #555;
-  margin: 0 auto 70px auto;
-  max-width: 750px;
+  font-size: 18px;
+  color: #aaa;
+  margin: 0 auto 80px;
+  max-width: 700px;
   line-height: 1.7;
 }
 
-/* Grid layout for 4 cards */
+/* STACKED LAYOUT (premium) */
 .practice-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 50px;
 }
 
-/* Card styling */
+/* CARD = NOW A DIVIDER STYLE */
 .card {
-  background: white;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  transition: all 0.4s ease;
-  text-align: left; /* keep text inside cards aligned left */
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 30px;
 }
 
-.card:hover {
-  transform: translateY(-10px);
+/* GOLD LEFT BORDER ACCENT */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 3px;
+  height: 0%;
+  background: #d4af37;
+  transition: height 0.6s ease;
 }
 
-.icon {
-  font-size: 32px;
-  margin-bottom: 25px;
+.card:hover::before {
+  height: 85%;
 }
 
-.card h3 {
+/* TITLE */
+.title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 22px;
+  color: #d4af37;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
 }
 
+/* UNDERLINE ANIMATION */
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #d4af37;
+  transition: width 0.4s ease;
+}
+
+.card:hover .title::after {
+  width: 100%;
+}
+
+/* DESCRIPTION */
 .card p {
-  color: #555;
+  color: #ccc;
   line-height: 1.7;
+  max-width: 700px;
 }
 
-/* Scroll animation */
+/* VIEW MORE */
+.view-more {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #d4af37;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* SCROLL ANIMATION (LEFT FLY-IN) */
 .hidden {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateX(-60px);
 }
 
 .show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
   transition: all 0.8s ease;
 }
+.extra-content {
+  margin-top: 15px;
+  color: #aaa;
+  animation: fadeDown 0.4s ease;
+}
 
-/* Responsive */
+.extra-content ul {
+  padding-left: 20px;
+}
+
+.extra-content li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.extra-content li::marker {
+  color: #d4af37;
+}
+.card {
+  align-self: start;
+}
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Smooth animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  .practice {
+    padding: 80px 20px;
+  }
+}
+@media (max-width: 900px) {
   .practice-cards {
     grid-template-columns: 1fr;
   }

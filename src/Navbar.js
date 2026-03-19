@@ -7,7 +7,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">FID ASIKA & CO</div>
+      <div className="logo">FID ASIKA ILOBI & CO</div>
 
   <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
   {menuOpen ? "✖" : "☰"}

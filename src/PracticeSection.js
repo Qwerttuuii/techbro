@@ -1,20 +1,90 @@
 import "./PracticeSection.css";
-import {
-  FaBalanceScale,
-  FaShieldAlt,
-  FaBriefcase,
-  FaUsers,
-} from "react-icons/fa";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function PracticeSection() {
+  const [activeIndex, setActiveIndex] = useState(null);
   const cardsRef = useRef([]);
+
+  const practiceAreas = [
+  {
+    title: "Corporate & Commercial Practice",
+    description:
+      "We provide strategic legal counsel to businesses at every stage of growth, including company formation, governance, mergers and acquisitions, and complex commercial transactions.",
+    services: [
+      "Company formation & structuring",
+      "Mergers & acquisitions",
+      "Corporate governance",
+      "Commercial contract drafting",
+    ],
+  },
+  {
+    title: "Banking & Finance Law",
+    description:
+      "We advise financial institutions, corporations, and individuals on complex financing arrangements, including project finance, syndicated lending, and regulatory compliance.",
+    services: [
+      "Litigation & dispute resolution",
+      "Leases and Assignments",
+      "Banking compliance",
+      "Mortgage advisory services",
+      "Debt restructuring",
+      "capital market Documentation",
+    ],
+  },
+  {
+    title: "Intellectual Property Law",
+    description:
+      "We assist clients in protecting, managing, and enforcing intellectual property rights, ensuring long-term value and competitive advantage.",
+    services: [
+      "Trademark registration",
+      "Copyright protection",
+      "IP enforcement",
+      "Licensing agreements",
+    ],
+  },
+  {
+    title: "Real Estate & Property Law",
+    description:
+      "We provide comprehensive legal services in property acquisition, management, and transactions for both corporate and individual clients.",
+    services: [
+      "Property acquisition",
+      "Lease agreements",
+      "Title verification",
+      "Property management advisory",
+      "Dispute resolution",
+      "Legal assistance in structuring, financing, and managing real estate projects",
+    ],
+  },
+  {
+    title: "Advocacy & Litigation",
+    description:
+      "We represent clients in complex disputes while also advising on strategic settlements, ensuring the most commercially beneficial outcomes.",
+    services: [
+      "Civil litigation",
+      "Commercial disputes",
+      "Arbitration & mediation",
+      "Settlement negotiation",
+    ],
+  },
+  {
+    title: "Election & Political Law",
+    description:
+      "We advise political parties, candidates, and institutions on electoral compliance, disputes, and governance matters.",
+    services: [
+      "Electoral compliance",
+      "Election petitions",
+      "Campaign advisory",
+      "Political risk assessment",
+    ],
+  },
+];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const index = entry.target.dataset.index;
+            entry.target.style.transitionDelay = `${index * 0.15}s`;
             entry.target.classList.add("show");
           }
         });
@@ -22,7 +92,9 @@ function PracticeSection() {
       { threshold: 0.2 }
     );
 
-    cardsRef.current.forEach((card) => observer.observe(card));
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
   }, []);
 
   return (
@@ -31,62 +103,46 @@ function PracticeSection() {
         <h2>Practice Areas</h2>
 
         <p className="practice-subtext">
-          We specialize in a diverse range of legal services to meet the unique
-          needs of individuals, businesses, and organizations.
+          Our firm delivers comprehensive legal services tailored to meet the
+          evolving needs of individuals, corporations, and institutions.
         </p>
 
         <div className="practice-cards">
-          {/* Card 1 */}
-          <div
-            className="card hidden"
-            ref={(el) => (cardsRef.current[0] = el)}
-          >
-            <FaBalanceScale className="icon" />
-            <h3>Corporate Law</h3>
-            <p>
-              Comprehensive legal support for businesses of all sizes, from
-              formation to complex corporate transactions.
-            </p>
-          </div>
+          {practiceAreas.map((area, index) => (
+            <div
+              key={index}
+              data-index={index}
+              className="card hidden"
+              ref={(el) => (cardsRef.current[index] = el)}
+            >
+              <div className="card-content">
+                <h3 className="title">{area.title}</h3>
+                <p>{area.description}</p>
 
-          {/* Card 2 */}
-          <div
-            className="card hidden"
-            ref={(el) => (cardsRef.current[1] = el)}
-          >
-            <FaShieldAlt className="icon" />
-            <h3>Litigation & Dispute Resolution</h3>
-            <p>
-              Expert representation in disputes, enforcement, and complex
-              litigation matters.
-            </p>
-          </div>
+                {/* VIEW MORE BUTTON */}
+                <span
+                  className="view-more"
+                  onClick={() =>
+                    setActiveIndex(index === activeIndex ? null : index)
+                  }
+                >
+                  {activeIndex === index ? "View Less" : "View More"}{" "}
+                  <span className="arrow">→</span>
+                </span>
 
-          {/* Card 3 */}
-          <div
-            className="card hidden"
-            ref={(el) => (cardsRef.current[2] = el)}
-          >
-            <FaBriefcase className="icon" />
-            <h3>Intellectual Property</h3>
-            <p>
-              Protection and management of intellectual property assets,
-              including patents, trademarks, and copyrights.
-            </p>
-          </div>
-
-          {/* Card 4 */}
-          <div
-            className="card hidden"
-            ref={(el) => (cardsRef.current[3] = el)}
-          >
-            <FaUsers className="icon" />
-            <h3>Employment Law</h3>
-            <p>
-              Guidance on employment contracts, workplace compliance, and labor
-              dispute resolution for employers and employees.
-            </p>
-          </div>
+                {/* EXPANDABLE CONTENT */}
+               {activeIndex === index && (
+              <div className="extra-content">
+              <ul>
+              {area.services.map((service, i) => (
+             <li key={i}>{service}</li>
+              ))}
+            </ul>
+            </div>
+            )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
