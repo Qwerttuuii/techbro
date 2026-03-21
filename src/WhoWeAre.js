@@ -5,66 +5,71 @@ import { useEffect } from "react";
 
 function WhoWeAre() {
   useEffect(() => {
-  const counters = document.querySelectorAll(".stat-number");
+    const counters = document.querySelectorAll(".stat-number");
+    const elements = document.querySelectorAll(".who-text, .who-image, .stat-box");
 
-  const startCounting = (counter) => {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
-    const duration = 2000;
-    const increment = target / (duration / 16);
+    const sectionObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-    const updateCount = () => {
-      count += increment;
+    elements.forEach((el) => sectionObserver.observe(el));
 
-      if (count < target) {
-        if (target === 95) {
-          counter.innerText = Math.floor(count) + "%";
-        } else {
-          counter.innerText = Math.floor(count) + "+";
-        }
-        requestAnimationFrame(updateCount);
-      } else {
-        if (target === 95) {
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute("data-target");
+      let count = 0;
+      const duration = 2000;
+      const increment = target / (duration / 16);
+
+      const updateCount = () => {
+        count += increment;
+
+        if (count < target) {
+          if (target === 95) {
+            counter.innerText = Math.floor(count) + "%";
+          } else {
+            counter.innerText = Math.floor(count) + "+";
+          }
+          requestAnimationFrame(updateCount);
+        } else if (target === 95) {
           counter.innerText = target + "%";
         } else {
           counter.innerText = target + "+";
         }
-      }
+      };
+
+      updateCount();
     };
 
-    updateCount();
-    const elements = document.querySelectorAll(
-  ".who-text, .who-image, .stat-box"
-);
+    const counterObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounting(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
+    counters.forEach((counter) => {
+      counterObserver.observe(counter);
     });
-  },
-  { threshold: 0.2 }
-);
 
-elements.forEach((el) => sectionObserver.observe(el));
-  };
+    return () => {
+      sectionObserver.disconnect();
+      counterObserver.disconnect();
+    };
+  }, []);
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        startCounting(entry.target);
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach((counter) => {
-    observer.observe(counter);
-  });
-
-}, []);
   return (
     <section className="who">
       <div className="who-container">
@@ -90,36 +95,36 @@ elements.forEach((el) => sectionObserver.observe(el));
           </Link>
         </div>
 
-        
-        
-          {/* CEO image here  */}
-          <div className="who-image hidden">
-  <img src={ceoImage} alt="CEO" />
-        
+
+
+        {/* CEO image here  */}
+        <div className="who-image hidden">
+          <img src={ceoImage} alt="CEO" />
+
 
         </div>
       </div>
       {/* STATS SECTION */}
-<section className="who-stats">
-  <div className="stats-container">
+      <section className="who-stats">
+        <div className="stats-container">
 
-    <div className="stat-box hidden">
-      <h2 className="stat-number" data-target="500">0</h2>
-      <p>Cases Successfully Handled</p>
-    </div>
+          <div className="stat-box hidden">
+            <h2 className="stat-number" data-target="500">0</h2>
+            <p>Cases Successfully Handled</p>
+          </div>
 
-    <div className="stat-box">
-      <h2 className="stat-number" data-target="95">0</h2>
-      <p>Client Satisfaction Rate</p>
-    </div>
+          <div className="stat-box hidden">
+            <h2 className="stat-number" data-target="95">0</h2>
+            <p>Client Satisfaction Rate</p>
+          </div>
 
-    <div className="stat-box">
-      <h2 className="stat-number" data-target="50">0</h2>
-      <p>Expert Legal Professionals</p>
-    </div>
+          <div className="stat-box hidden">
+            <h2 className="stat-number" data-target="50">0</h2>
+            <p>Expert Legal Professionals</p>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
     </section>
   );
 }
