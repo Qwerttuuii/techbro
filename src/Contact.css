@@ -54,9 +54,7 @@
 .contact-container {
   max-width: 1300px;
   margin: 0 auto;
-  margin-left: 50px;
-
-  
+  padding: 0 20px;
 }
 
 /* HEADER */
@@ -272,6 +270,7 @@
   background: rgba(255,255,255,0.03);
   padding: 40px;
   border: 1px solid rgba(255,255,255,0.08);
+  width: 100%;
 }
 
 .contact-form h2 {
@@ -386,6 +385,14 @@
 @media (max-width: 900px) {
   .contact-main {
     grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    padding: 0 16px;
+  }
+
+  .contact-form {
+    padding: 24px 18px;
   }
 
   .contact-hero h1 {

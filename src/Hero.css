@@ -109,13 +109,14 @@
 
 /* first line */
 .typing span:first-child {
-  animation: typing 2s steps(20,end) forwards, blink 1s infinite;
+  animation: typing 2s steps(20,end) forwards;
+  animation-delay: 0.8s;
 }
 
 /* second line */
 .typing span:last-child {
   animation: typing 2s steps(10,end) forwards, blink 1s infinite;
-  animation-delay: 2s;
+  animation-delay: 2.8s, 2.8s;
 }
 
 /* Gold accent line */
@@ -127,7 +128,7 @@
   background: #c6a75e;
   margin-top: 18px;
   animation: goldLine 1s ease forwards;
-  animation-delay: 3.8s;
+  animation-delay: 5s;
 }
 
 /* Animations */
@@ -189,6 +190,12 @@
   .typing span {
     white-space: normal;
     border-right: none;
+    width: auto;
+    overflow: visible;
+  }
+
+  .typing span:first-child,
+  .typing span:last-child {
     animation: none;
     width: auto;
   }
