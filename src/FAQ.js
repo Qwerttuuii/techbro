@@ -23,9 +23,9 @@ const faqData = [
       "Bring all relevant documents, contracts, identification, and any correspondence related to your case.",
   },
   {
-    question: "Do you handle cases outside Lagos?",
+    question: "What hours does your office operate?",
     answer:
-      "Yes, we represent clients across Nigeria and can handle matters beyond Lagos depending on the case.",
+      "Our Office is open between the hours of 7 O'clock in the morning and 7 o'clock in the evening. While on Saturdays the office is open from 9 O'clock in the morning to 5 O'clock in the evening. On special request we open on Sundays.",
   },
 ];
 

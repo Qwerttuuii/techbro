@@ -1,5 +1,5 @@
 import "./Hero.css";
-import heroBg from "./assets/hero-bg.png";
+import heroBg from "./assets/hero-bg.avif";
 import { useNavigate } from "react-router-dom";
 
 function Hero() {
@@ -18,7 +18,7 @@ function Hero() {
         </h1>
 
         <p>
-          At FID ASIKA & CO., we provide comprehensive legal services with
+          At FID ASIKA ILOBI & CO., we provide comprehensive legal services with
           unwavering dedication to our clients. Our expert team combines
           decades of experience with innovative solutions.
         </p>
