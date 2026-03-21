@@ -85,7 +85,7 @@ section {
 /* Smooth reveal */
 .show {
   opacity: 1;
-  transition: all 0.9s ease;
+  transition: all 0.2s ease;
 }
 @media (max-width: 768px) {
   .who-container{
